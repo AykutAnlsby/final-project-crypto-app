@@ -1,0 +1,48 @@
+Ideas :  Currency Tracker Project 
+
+        Landing Page
+            
+            Log in & Sign in 
+
+                signup: name and email 
+
+                login: email
+                {
+                    email
+                }
+
+        Tracking Page 
+            nav Bar 
+            currency categories 
+            searchable currency chart
+
+        Currency solo Page 
+            price 
+            short description 
+            chart currently, 5 days , 15 days, yearly 
+            add favorite button
+            price dolllars, Euro , Cad
+
+        Personal Page 
+            removing crypto option
+            personal details
+
+   Front end needs to give backend crypto currency data 
+
+
+        Data provide by  :
+        API- 
+        API docs can be found here: https://api.nomics.com/
+
+        API key: d9ed339d54454d1aa5db440ea51fd519b020facc
+        Email: aykutanlasbay@gmail.com 
+
+        backend stuff:
+        Endpoints in index.js in server folder
+        Need the create a database for customer 
+        Backend gets request and responds with the 
+
+
+Fonts : https://cryptofonts.com/
+
+second Data Provider  : https://api.coingecko.com/api/v3/coins/markets?vs_currency=cad&order=market_cap_desc&per_page=100&page=1&sparkline=false&price_change_percentage=24h
