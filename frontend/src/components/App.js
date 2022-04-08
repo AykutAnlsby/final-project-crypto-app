@@ -4,7 +4,7 @@ import GlobalStyles from "./GlobalStyles";
 import Home from "./Pages/Home";
 import Header from "./Header";
 import CoinMainPage from "./Pages/CoinMainPage";
-
+import Chart from "./Chart/Chart";
 import { useState } from "react";
 import { useEffect } from "react";
 const App = () => {
@@ -24,7 +24,9 @@ const App = () => {
             <Home />
           </Route>
         </div>
-
+        <Route exact path="/chart">
+          <Chart />
+        </Route>
         <Route path="/coins/:id">
           <CoinMainPage />
         </Route>

@@ -1,5 +1,5 @@
 "use strict";
-const { getMarketCap } = require("./handler");
+const { getMarketCap, getChartData } = require("./handler");
 // import the needed node_modules.
 const express = require("express");
 const morgan = require("morgan");
@@ -15,6 +15,7 @@ express()
   // Nothing to modify above this line
   // ---------------------------------
   .get("/api/market-cap", getMarketCap)
+  .get("/api/chart-data", getChartData)
   // ---------------------------------
   // Nothing to modify below this line
 

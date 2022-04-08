@@ -2,16 +2,22 @@ import React from "react";
 import styled from "styled-components";
 import { useHistory } from "react-router-dom";
 import DropDownIndex from "./DropDown/DropDownIndex";
+import SignInButton from "../Auth0/SignInButton";
+import SignOutButton from "../Auth0/SignOutButton";
+import { useAuth0 } from "@auth0/auth0-react";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Header = () => {
   const history = useHistory();
-
+  const { user } = useAuth0();
+  console.log("user", user);
   return (
     <Wrapper>
       <Container>
         <Toolbar>
           <Logo onClick={() => history.push("/")}>GoGoCrypto</Logo>
+          <SignInButton></SignInButton>
+          <SignOutButton></SignOutButton>
           <DropDown>
             <DropDownButton>
               {/* Currency */}

@@ -29,4 +29,27 @@ const getMarketCap = async (req, res) => {
   }
 };
 
-module.exports = { getMarketCap };
+const getChartData = async (req, res) => {
+  const { coin, currency, days, interval } = req.query;
+
+  try {
+    const response = await fetch(
+      `https://api.coingecko.com/api/v3/coins/${coin}/market_chart?vs_currency=${currency}&days=${days}&interval=${interval}`
+    );
+
+    const data = await response.json();
+    console.log(data);
+
+    const chartPrices = data.prices.map((el) => el[1]);
+    const chartCaps = data.market_caps.map((el) => el[1]);
+    const chartVolume = data.total_volumes.map((el) => el[1]);
+
+    return res
+      .status(200)
+      .json({ status: 200, chartPrices, chartCaps, chartVolume });
+  } catch (err) {
+    return res.status(500).json({ status: 500, message: err.message });
+  }
+};
+
+module.exports = { getMarketCap, getChartData };
