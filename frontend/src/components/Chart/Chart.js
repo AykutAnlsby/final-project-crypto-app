@@ -9,7 +9,9 @@ import {
   Legend,
 } from "chart.js";
 import { Line } from "react-chartjs-2";
-
+import moment from "moment";
+import "chartjs-adapter-moment";
+import styled from "styled-components";
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -20,7 +22,7 @@ ChartJS.register(
   Legend
 );
 
-const Chart = () => {
+const Chart = ({ chartData }) => {
   const options = {
     responsive: true,
     interaction: {
@@ -31,7 +33,7 @@ const Chart = () => {
     plugins: {
       title: {
         display: true,
-        text: "CurrencyChart - Multi Axis",
+        text: "Coin Price & Market Cap",
       },
     },
     scales: {
@@ -50,22 +52,26 @@ const Chart = () => {
       },
     },
   };
+  // const dateTo = moment().format('YYYY-MM-DD');
+  // const dateFrom = moment().subtract(7,'d').format('YYYY-MM-DD');
+  const SevenDaysAgo = moment().subtract(7, "days");
+  console.log(SevenDaysAgo);
 
-  const labels = ["January", "February", "March", "April", "May", "June"];
+  const labels = ["1", "2", "3", "4", "5", "6", "7"];
 
   const data = {
     labels: labels,
     datasets: [
       {
-        label: "My First dataset",
+        label: "Coin Market Price",
         backgroundColor: "rgb(255, 99, 132)",
         borderColor: "rgb(255, 99, 132)",
-        data: [0, 10, 5, 2, 20, 30, 45],
+        data: chartData.chartPrices,
         yAxisID: "y0",
       },
       {
-        label: "Dataset 2",
-        data: [15000, 5000, 20000, 15000, 60000, 80000],
+        label: "Coin Market Cap",
+        data: chartData.chartCaps,
         borderColor: "rgb(53, 162, 235)",
         backgroundColor: "rgba(255, 99, 132)",
         yAxisID: "y1",
@@ -80,9 +86,14 @@ const Chart = () => {
   };
 
   return (
-    <div>
+    <Wrapper>
       <Line options={options} data={data} />
-    </div>
+    </Wrapper>
   );
 };
+
+const Wrapper = styled.div`
+  width: 70%;
+  height: 100%;
+`;
 export default Chart;

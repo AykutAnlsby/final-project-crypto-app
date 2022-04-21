@@ -1,18 +1,20 @@
 import React from "react";
 import styled from "styled-components";
+import Banner from "../Banner/Banner";
+
+import BasicTable from "../Banner/TableBasic/BasicTable";
+// import Crypto from "../Banner/SingleCrypto";
+// import background from "../Banner/img/background.jpg";
 
 const Home = () => {
-  return <h1>hello</h1>;
+  return (
+    <>
+      <Banner />
+      <BasicTable />
+      {/* <Crypto /> */}
+      {/* <div styles={{ backgroundImage: `url(${background})` }}></div> */}
+    </>
+  );
 };
-
-// const Wrapper = styled.div`
-//   margin: 0;
-//   padding: 4px;
-//   background-color: black;
-//   color: gold;
-// `;
-// const Container = styled.div`
-//   margin: 0;
-// `;
 
 export default Home;

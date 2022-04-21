@@ -46,3 +46,9 @@ Ideas :  Currency Tracker Project
 Fonts : https://cryptofonts.com/
 
 second Data Provider  : https://api.coingecko.com/api/v3/coins/markets?vs_currency=cad&order=market_cap_desc&per_page=100&page=1&sparkline=false&price_change_percentage=24h
+
+
+
+Auth0
+dev-89iddx6a.us.auth0.com
+iDhgpojOlsgFBZpVudzEo4WYNg8HW8Df
